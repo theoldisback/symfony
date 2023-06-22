@@ -77,5 +77,20 @@ public function listFilms(FilmRepository $filmRepository)
     ]);
 }
 
-5-b
-#[Route('/films, name: films)]
+5-b 
+[1] : #[Route('/getFilm/{id}, name: ‘getFilm')]
+public function showFilm(ManagerRegistry $MR, FilmRepository $repo, $id): Response
+{
+    $entityManager = $MR->getManager();
+    $film = $repo->find($id);
+
+    if ($film) {
+        $film->setViews($film->getViews() + 1);
+        $entityManager->flush();
+    }
+
+    return $this->render('film/show.html.twig', [
+        'film' => $film,
+    ]);
+}
+
