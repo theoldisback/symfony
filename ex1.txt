@@ -94,3 +94,4 @@ public function showFilm(ManagerRegistry $MR, FilmRepository $repo, $id): Respon
     ]);
 }
 
+5)c)        return $this->redirectToRoute('film_list');
