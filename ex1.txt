@@ -63,3 +63,18 @@ i faut indiquer le type EntityType
 
 ]);
 
+
+5.a
+
+
+#[Route('/films, name: films)]
+public function listFilms(FilmRepository $filmRepository)
+{
+    $films = $filmRepository->findAll();
+
+    return $this->render('film/list.html.twig', [
+        'films' => $films,
+    ]);
+}
+
+
