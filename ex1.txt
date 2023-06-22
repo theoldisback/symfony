@@ -77,4 +77,5 @@ public function listFilms(FilmRepository $filmRepository)
     ]);
 }
 
-
+5-b
+#[Route('/films, name: films)]
