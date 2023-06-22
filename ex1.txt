@@ -4,7 +4,8 @@ modifier lannotation de cle primaire
 
 1/b 
 lentity manager est interface entre le code et le base de donnees il effectue des opérations de persistance, de récupération : exemples getRepository() et persist()
-2/b
+2/a
+
 les etapes pour relation:
 commande : php bin/console create entity Film 
 (pour modifier la tables existante)
