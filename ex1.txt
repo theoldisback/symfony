@@ -95,3 +95,30 @@ public function showFilm(ManagerRegistry $MR, FilmRepository $repo, $id): Respon
 }
 
 5)c)        return $this->redirectToRoute('film_list');
+
+
+7-
+
+public function getFilmByCat($id)
+{
+    return $this->createQueryBuilder('f')
+        ->leftJoin('f.category', 'c')
+        ->andWhere('c.id = :categoryId')
+        ->setParameter('categoryId', $id)
+        ->getQuery()
+        ->getResult();
+}
+
+
+
+
+
+8-
+public function getFilmsnbViews()
+{
+    return $this->createQueryBuilder('f')
+        ->where('f.views > :views')
+        ->setParameter('views', 100)
+        ->getQuery()
+        ->getResult();
+}
