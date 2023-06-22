@@ -122,3 +122,18 @@ public function getFilmsnbViews()
         ->getQuery()
         ->getResult();
 }
+
+6- 
+{% if films is not empty %} 
+{% set mostViewedFilm = films[0] %}
+ {% for film in films %} 
+	{% if film.views > mostViewedFilm.views %}
+ 	{% set mostViewedFilm = film %}
+ 	{% endif %}
+ {% endfor %}
+ <h2>Most Viewed Film:</h2>
+ <p>Title: {{ mostViewedFilm.title }}</p> 
+<p>Description: {{ mostViewedFilm.description }}</p>
+ {% else %} 
+<p>No films found.</p>
+ {% endif %}
