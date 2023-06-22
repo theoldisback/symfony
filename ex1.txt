@@ -1,3 +1,6 @@
 1/a
 modifier lannotation de cle primaire 
 @ORM\GeneratedValue(strategy="NONE")
+
+1/b 
+lentity manager est interface entre le code et le base de donnees il effectue des opérations de persistance, de récupération : exemples getRepository() et persist()
